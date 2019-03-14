@@ -1,0 +1,25 @@
+#the-div {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: red;
+    transition: 2s;
+}
+
+#the-div > :first-child {
+    transition: 2s;
+}
+
+#the-div:hover {
+    width: 600px;
+    height: 600px;
+    background-color: yellow;
+}
+
+#the-div:hover > :first-child {
+    border-style: solid;
+    border-width: 1px;
+    border-color: green;
+}

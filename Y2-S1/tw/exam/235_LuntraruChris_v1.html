@@ -1,0 +1,169 @@
+<!-- SITEUL A FOST TESTAT IN CHROME -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Testat in Chrome </title>
+    <style type="text/css">
+        @media only screen and (min-width: 900px) {
+            #parinte {
+                height: 800px;
+                width: 800px;
+                border-width: 1px;
+                border-color: black;
+                border-style: solid;
+            }
+
+            .celula {
+                background-color: pink;
+            }
+
+            div.celula {
+                border-width: 1px;
+                border-style: solid;
+            }
+
+            div.celula:nth-child(odd) {
+                border-color: red;
+            }
+
+            div.celula:nth-child(even) {
+                border-color: purple;
+            }
+        }
+
+        div.celula {
+            transition: background-color 1s;
+        }
+
+        div.celula:hover {
+            background-color: blue; 
+        }
+
+        @media only screen and (max-width: 900px) {
+            #parinte {
+                background-color: green;
+                width: 100%;
+                /*Pentru a se vedea backgroundul*/
+                height: 5px;
+            }
+
+            div.celula {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            let N = 6;
+            if (localStorage.getItem('N')) {
+                N = localStorage.getItem('N');
+            }
+
+            let parinteDiv = document.createElement('div');
+            parinteDiv.id = 'parinte';
+            console.log(parinteDiv.style.width);
+            parinteDiv.addEventListener('click', function(ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+
+                setTimeout(function() {
+                    for (let i = 0; i < N; ++i) {
+                        for (let j = 0; j < N; ++j) {
+                            let childDiv = document.createElement('div');
+                            childDiv.classList.add('celula');
+
+                            let casutaWidth = (800 / N - 5).toString();
+                            // let width = parinteDiv.style.width
+                            childDiv.style.width = casutaWidth + 'px';
+                            childDiv.style.height = childDiv.style.width;
+                            childDiv.style.cssFloat = 'left';
+
+                            childDiv.addEventListener('click', function(ev) {
+                                ev.preventDefault();
+                                ev.stopPropagation();
+                            });
+
+                            childDiv.addEventListener('dblclick', function(ev) {
+                                ev.preventDefault();
+                                ev.stopPropagation();
+
+                                let clickDiv = document.createElement('div');
+                                clickDiv.innerHTML = ev.screenX.toString() + ',' + ev.screenY.toString();
+                                document.body.appendChild(clickDiv);
+                                childDiv.innerHTML = i.toString() + ',' + j.toString();
+                            });
+
+                            parinteDiv.appendChild(childDiv);
+                        }
+
+                    }
+                }, 5000);
+            });
+
+            document.body.appendChild(parinteDiv);
+
+            for (let i = 4; i <= 8; ++i) {
+                let radioButton = document.createElement('input');
+                radioButton.type = 'radio';
+                radioButton.name = 'rb';
+                radioButton.value = i.toString();
+
+                if (i == N) {
+                    radioButton.defaultChecked = true;
+                }
+                
+                radioButton.addEventListener('click', function() {
+                    N = Number(this.value);
+                    localStorage.setItem('N', N.toString());
+                });
+
+                document.body.appendChild(radioButton);
+            }
+        });
+
+        let firstPressC = 1;
+        let firstPressS = 1;
+        let interval;
+        window.addEventListener('keypress', function(ev) {
+            if (ev.key == 'c' && firstPressC == 1) {
+                firstPressC = 0;
+
+                interval = setInterval(function() {
+                    let parinteDiv = document.getElementById('parinte');
+                    for (let child of parinteDiv.children) {
+                        let r = Math.floor(Math.random() * 256);
+                        let g = Math.floor(Math.random() * 256);
+                        let b = Math.floor(Math.random() * 256);
+                        child.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+                    }
+                }, 3000);
+            }
+
+            if (ev.key == 's' && firstPressS == 1 && firstPressC == 0) {
+                firstPressS = 0;
+                clearInterval(interval);
+
+                let parinteDiv = document.getElementById('parinte');
+                for (let child of parinteDiv.children) {
+                    let r = Math.floor(Math.random() * 256);
+                    let g = Math.floor(Math.random() * 256);
+                    let b = Math.floor(Math.random() * 256);
+                    child.style.backgroundColor = '';
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+<!--     <div id="parinte">
+        <div class="celula">A</div>
+        <div class="celula">B</div>
+        <div class="celula">C</div>
+        <div class="celula">D</div>
+        <div class="celula">E</div>
+    </div> -->
+</body>
+</html>

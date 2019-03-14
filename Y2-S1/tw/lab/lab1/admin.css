@@ -1,0 +1,28 @@
+* {
+    font-family:Helvetica;
+}
+
+table {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+
+th {
+    /*background-color: darkgray;*/
+    border: 1px solid lightgray;
+    margin: 0;
+}
+
+tr {
+    background-color: darkgray;
+    border: 1px solid lightgray;
+    margin: 0;
+}
+
+tr:nth-child(even) {
+    background-color: lightblue;
+}
+
+table.cls2 tr {
+    background-color: magenta;
+}

@@ -1,0 +1,7 @@
+(pwd == computer-networks) docker build -t 235 ./docker
+docker run -it 235 bash
+docker-compose -up d
+docker ps
+docker-compose ps
+docker network ls
+docker network inspect (id)

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="Proiect2_REtoDFA" targetName="Proiect2_REtoDFA" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b723647d-6083-4e9b-aac4-c0aa79b5e4e9" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="750">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="428" column="1" lean-forward="true" selection-start-line="428" selection-start-column="1" selection-end-line="428" selection-end-column="1" />
+              <folding>
+                <element signature="e#200#287#0" />
+                <element signature="e#289#571#0" />
+                <element signature="e#573#2178#0" />
+                <element signature="e#2217#2266#1" />
+                <element signature="e#2269#2364#1" />
+                <element signature="e#2409#2481#0" />
+                <element signature="e#2483#2713#0" />
+                <element signature="e#2715#2847#0" />
+                <element signature="e#2849#3084#0" />
+                <element signature="e#5168#5442#0" />
+                <element signature="e#5444#6077#0" />
+                <element signature="e#6079#6700#0" />
+                <element signature="e#6702#7172#0" />
+                <element signature="e#7174#7703#0" />
+                <element signature="e#7705#8081#0" />
+                <element signature="e#8084#8590#1" />
+                <element signature="e#8154#8437#0" />
+                <element signature="e#8443#8588#0" />
+                <element signature="e#8618#8942#0" />
+                <element signature="e#9342#9676#0" />
+                <element signature="e#9678#11145#0" />
+                <element signature="e#11147#11947#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.in" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.in">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="15" lean-forward="true" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.out" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.out">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>DFAState</find>
+      <find>finalStates</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>DFAEdge</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/cmake-build-debug/test.in" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="OCFindUsagesOptions" text="false" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1905" />
+    <option name="width" value="1950" />
+    <option name="height" value="2075" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Proiect2_REtoDFA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proiect2_REtoDFA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proiect2_REtoDFA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proiect2_REtoDFA" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Proiect2_REtoDFA">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Proiect2_REtoDFA" RUN_TARGET_NAME="Proiect2_REtoDFA" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="Proiect2_REtoDFA" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Proiect2_REtoDFA" TARGET_NAME="Proiect2_REtoDFA" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Proiect2_REtoDFA" RUN_TARGET_NAME="Proiect2_REtoDFA" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.Proiect2_REtoDFA" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b723647d-6083-4e9b-aac4-c0aa79b5e4e9" name="Default" comment="" />
+      <created>1522245240904</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522245240904</updated>
+      <workItem from="1522245242761" duration="180000" />
+      <workItem from="1522318120253" duration="7000" />
+      <workItem from="1523715374643" duration="2006000" />
+      <workItem from="1523791654593" duration="11949000" />
+      <workItem from="1523953378104" duration="17581000" />
+      <workItem from="1524038446812" duration="335000" />
+      <workItem from="1524044394388" duration="19000" />
+      <workItem from="1524056926824" duration="1670000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="33747000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19128172" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3292011" />
+      <window_info anchor="bottom" id="CMake" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3292011" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39944905" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="28" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="firstPos" language="ObjectiveC" />
+        <watch expression="followPos" language="ObjectiveC" />
+        <watch expression="nodeAt" language="ObjectiveC" />
+        <watch expression="TreeNodesIn[0]" language="ObjectiveC" />
+        <watch expression="TreeNodesIn[4]" language="ObjectiveC" />
+        <watch expression="letter_nr" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>letter_nr</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>letterList</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>letterList.size()</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>TreeNodesIn[node_ind]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>followPos[2]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>TreeNodesIn[4]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>TreeNodesIn[0]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nodeAt[tree_node].letter</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nodeAt</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>followPos</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7812">
+          <caret line="434" column="25" selection-start-line="434" selection-start-column="25" selection-end-line="434" selection-end-column="25" />
+          <folding>
+            <element signature="e#200#287#0" />
+            <element signature="e#289#571#0" />
+            <element signature="e#573#2178#0" />
+            <element signature="e#2217#2266#1" />
+            <element signature="e#2269#2364#1" />
+            <element signature="e#2409#2481#0" />
+            <element signature="e#2483#2713#0" />
+            <element signature="e#2715#2847#0" />
+            <element signature="e#2849#3084#0" />
+            <element signature="e#5168#5442#0" />
+            <element signature="e#5444#6077#0" />
+            <element signature="e#6079#6700#0" />
+            <element signature="e#6702#7172#0" />
+            <element signature="e#7174#7703#0" />
+            <element signature="e#7705#8081#0" />
+            <element signature="e#8084#8590#1" />
+            <element signature="e#8154#8437#0" />
+            <element signature="e#8443#8588#0" />
+            <element signature="e#8618#8942#0" />
+            <element signature="e#9342#9676#0" />
+            <element signature="e#9678#11145#0" />
+            <element signature="e#11147#11947#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7812">
+          <caret line="434" column="25" selection-start-line="434" selection-start-column="25" selection-end-line="434" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7812">
+          <caret line="434" column="25" lean-forward="true" selection-start-line="434" selection-start-column="25" selection-end-line="434" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="3" lean-forward="true" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3654">
+          <caret line="203" column="4" lean-forward="true" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7596">
+          <caret line="422" selection-start-line="422" selection-end-line="422" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/bits/stl_algo.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69876">
+          <caret line="3882" selection-start-line="3882" selection-end-line="3882" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/bits/stl_iterator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="779" selection-start-line="779" selection-end-line="779" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="884" selection-start-line="884" selection-end-line="884" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="581" selection-start-line="581" selection-end-line="581" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/bits/stl_algo.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="3885" selection-start-line="3885" selection-end-line="3885" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="428" column="1" lean-forward="true" selection-start-line="428" selection-start-column="1" selection-end-line="428" selection-end-column="1" />
+          <folding>
+            <element signature="e#200#287#0" />
+            <element signature="e#289#571#0" />
+            <element signature="e#573#2178#0" />
+            <element signature="e#2217#2266#1" />
+            <element signature="e#2269#2364#1" />
+            <element signature="e#2409#2481#0" />
+            <element signature="e#2483#2713#0" />
+            <element signature="e#2715#2847#0" />
+            <element signature="e#2849#3084#0" />
+            <element signature="e#5168#5442#0" />
+            <element signature="e#5444#6077#0" />
+            <element signature="e#6079#6700#0" />
+            <element signature="e#6702#7172#0" />
+            <element signature="e#7174#7703#0" />
+            <element signature="e#7705#8081#0" />
+            <element signature="e#8084#8590#1" />
+            <element signature="e#8154#8437#0" />
+            <element signature="e#8443#8588#0" />
+            <element signature="e#8618#8942#0" />
+            <element signature="e#9342#9676#0" />
+            <element signature="e#9678#11145#0" />
+            <element signature="e#11147#11947#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

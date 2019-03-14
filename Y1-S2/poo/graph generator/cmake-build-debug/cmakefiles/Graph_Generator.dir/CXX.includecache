@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/chris/Dropbox/University/Y1-S2/POO/Graph Generator/main.cpp
+iostream
+-
+fstream
+-
+ctime
+-
+

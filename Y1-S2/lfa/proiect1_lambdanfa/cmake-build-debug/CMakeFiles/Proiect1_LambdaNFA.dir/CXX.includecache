@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/chris/Dropbox/University/Y1-S2/LFA/Proiect1_LambdaNFA/main.cpp
+iostream
+-
+vector
+-
+fstream
+-
+map
+-
+cstring
+-
+

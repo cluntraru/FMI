@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="admin.js"></script>
+    <link rel="stylesheet" type="text/css" href="admin.css">
+</head>
+<body>
+    <h1>Titlu</h1>
+
+    <ul>
+        <li> Pagina A</li>
+        <li> Pagina B</li>
+        <li> Pagina C</li>
+    </ul>
+
+    <table id="table" class="cls">
+        <tr>
+            <th>NUME</th>
+            <th>SERIE</th>
+            <th>NUMAR</th>
+            <th>OPS</th>
+        </tr>
+
+        <tr v-for="el in col">
+            <td>{{el.NUME}}</td>
+            <td>{{el.SERIE}}</td>
+            <td>{{el.NUMAR}}</td>
+            <td>
+                <button>EDIT</button>
+                <button>DELETE</button>
+            </td>
+        </tr>
+    </table>
+
+    <table id="table2" class="cls2">
+        <tr>
+            <th>NUME</th>
+            <th>SERIE</th>
+            <th>NUMAR</th>
+            <th>OPS</th>
+        </tr>
+
+        <tr v-for="el in col">
+            <td>{{el.NUME}}</td>
+            <td>{{el.SERIE}}</td>
+            <td>{{el.NUMAR}}</td>
+            <td>
+                <button>EDIT</button>
+                <button>DELETE</button>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

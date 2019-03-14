@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/chris/Dropbox/University/Y1-S2/LFA/Proiect2_REtoDFA/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+queue
+-
+algorithm
+-
+map
+-
+
