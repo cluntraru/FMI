@@ -1,0 +1,34 @@
+Proiectul 5 - cabinet medical
+
+Actiuni:
+1. Primeste reteta din sistem - doctor
+2. Revendica retetele unui pacient - farmacie
+3. Emite reteta - sistem emitere
+4. Consulta pacient - doctor
+5. Imbolnavire persoana - persoana devine pacient
+6. Vindecare persoana - persoana devine sanatoasa
+7. Moarte persoana - persoana moare (dispare)
+
+Servicii:
+1. Afiseaza retete emise
+2. Afiseaza persoane bolnave
+3. Afiseaza persoane sanatoase
+4. Afiseaza civili
+5. Afiseaza doctori
+6. Afiseaza doctorii unui cabinet
+7. Afiseaza pacientii unui cabinet
+8. Introduce persoana cu anumite date (nume, profesie etc)
+9. Afiseaza cabinete
+10. Afiseaza farmacii
+(11.) Afiseaza institutii
+(12.) Afiseaza civili bolnavi/sanatosi sau doctori b/s
+
+Clase:
+1. Sistem medical - singleton, se ocupa de management
+2. Persoana
+3. Civil (persoana)
+4. Doctor (persoana)
+5. Reteta
+6. Institutie
+7. Cabinet (institutie)
+8. Farmacie (institutie)
