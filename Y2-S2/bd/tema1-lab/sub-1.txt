@@ -1,0 +1,145 @@
+I.
+1. A)
+2. A), B)
+3. C)
+4. C)
+5. 09-MAR-09
+6. 3
+7. D)
+
+II.
+1.
+    SELECT
+        CUST_ID, CUST_NAME
+    FROM
+        CUSTOMER_TBL
+    WHERE
+        CUST_STATE IN ('IN', 'OH', 'MI', 'IL')
+    AND
+        LOWER(cust_name) LIKE 'a%' OR LOWER(cust_name) LIKE 'b%'
+    ORDER BY
+        CUST_NAME;
+
+2. 
+a)
+    SELECT
+        PROD_ID, PROD_DESC, COST
+    FROM
+        PRODUCTS_TBL
+    WHERE
+        COST >= 1 AND COST <= 12.5;
+        
+b)
+    SELECT
+        PROD_ID, PROD_DESC, COST
+    FROM
+        PRODUCTS_TBL
+    WHERE
+        COST < 1 OR COST > 12.5;
+
+3.
+    SELECT
+        LOWER(FIRST_NAME)||'.'||LOWER(LAST_NAME)||'@'||'ittech.com'
+    FROM
+        EMPLOYEE_TBL;
+
+4.
+    SELECT
+        LAST_NAME||', '||FIRST_NAME AS "NAME",
+        SUBSTR(EMP_ID, 0, 3)||'-'||SUBSTR(EMP_ID, 3, 2)||'-'||SUBSTR(EMP_ID, 5, 4) AS "EMP_ID",
+        '('||SUBSTR(PHONE, 0, 3)||')'||SUBSTR(PHONE, 3, 3)||'-'||SUBSTR(PHONE, 6, 4) AS "PHONE"
+    FROM
+        EMPLOYEE_TBL;
+
+5.
+    SELECT
+        EMP_ID,
+        DATE_HIRE
+    FROM
+        EMPLOYEE_PAY_TBL;
+
+6.
+    SELECT
+        EMP_ID,
+        LAST_NAME,
+        FIRST_NAME,
+        SALARY,
+        BONUS
+    FROM
+        EMPLOYEE_TBL
+    JOIN
+        EMPLOYEE_PAY_TBL USING(EMP_ID);
+        
+7.
+    SELECT
+        CUST_NAME,
+        ORD_NUM,
+        ORD_DATE
+    FROM
+        ORDERS_TBL
+    JOIN
+        CUSTOMER_TBL USING(CUST_ID)
+    WHERE
+        CUST_STATE LIKE 'I%';
+
+8.
+    SELECT
+        ORD_NUM,
+        QTY,
+        FIRST_NAME||' '||LAST_NAME AS "NAME"
+    FROM
+        ORDERS_TBL
+    JOIN
+        EMPLOYEE_TBL ON(SALES_REP=EMP_ID);
+
+9.
+    SELECT
+        ORD_NUM,
+        QTY,
+        FIRST_NAME||' '||LAST_NAME AS "NAME"
+    FROM
+        ORDERS_TBL
+    RIGHT JOIN
+        EMPLOYEE_TBL ON(SALES_REP=EMP_ID);
+
+10.
+    SELECT
+        FIRST_NAME||' '||LAST_NAME AS "NAME"
+    FROM
+        EMPLOYEE_TBL
+    WHERE
+        MIDDLE_NAME IS NULL;
+
+11.
+    SELECT
+        FIRST_NAME||' '||LAST_NAME AS "NAME",
+        NVL(SALARY, 0) *  NVL(PAY_RATE, 1) + NVL(BONUS, 0) AS "ANNUAL PAY"
+    FROM
+        EMPLOYEE_PAY_TBL
+    JOIN
+        EMPLOYEE_TBL USING(EMP_ID);
+
+12.
+Var 1)
+    SELECT
+        FIRST_NAME||' '||LAST_NAME AS "NAME",
+        SALARY,
+        CASE
+            WHEN POSITION='MARKETING' THEN SALARY * 1.1
+            WHEN POSITION='SALESMAN' THEN SALARY * 1.15
+            ELSE SALARY
+        END "Salariu modificat"
+    FROM
+        EMPLOYEE_PAY_TBL
+    JOIN
+        EMPLOYEE_TBL USING(EMP_ID);
+
+Var 2)
+    SELECT
+        FIRST_NAME||' '||LAST_NAME AS "NAME",
+        SALARY,
+        DECODE(POSITION, 'MARKETING', SALARY * 1.1, 'SALESMAN', SALARY * 1.15, SALARY) "Salariu modificat"
+    FROM
+        EMPLOYEE_PAY_TBL
+    JOIN
+        EMPLOYEE_TBL USING(EMP_ID);
