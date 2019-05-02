@@ -145,4 +145,3 @@ II.
         SALARY < 32000 AND BONUS * 17 < 32000
         
 12.
-    
