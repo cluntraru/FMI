@@ -1,0 +1,279 @@
+1.
+    SELECT
+        s_id AS "Cod",
+        s_first || ' ' || s_last as "Student sau curs"
+    FROM
+        student
+    JOIN
+        faculty USING(f_id)
+    WHERE
+        f_last = 'Brown'
+    UNION
+    SELECT
+        course_no AS "Cod",
+        course_name AS "Student sau curs"
+    FROM
+        course
+    WHERE
+        course_no IN
+        (
+            SELECT
+                course_no
+            FROM
+                course_section
+            WHERE
+                f_id IN
+                (
+                    SELECT
+                        f_id
+                    FROM
+                        faculty
+                    WHERE
+                        f_last = 'Brown'
+                )
+        )
+
+2.
+    SELECT
+        student.s_id,
+        student.s_first || ' ' || student.s_last AS "name"
+    FROM
+        student
+    JOIN
+        enrollment ON student.s_id = enrollment.s_id
+    JOIN
+        course_section ON enrollment.c_sec_id = course_section.c_sec_id
+    JOIN
+        course ON course_section.course_no = course.course_no
+    WHERE
+        course.course_name = 'Database Management' AND
+        student.s_id NOT IN
+        (
+            SELECT
+                s_id
+            FROM
+                enrollment
+            JOIN
+                course_section ON enrollment.c_sec_id = course_section.c_sec_id
+            JOIN
+                course ON course_section.course_no = course.course_no
+            WHERE
+                course.course_name = 'Programming in C++'
+        )
+
+3.
+    SELECT DISTINCT
+        s_id,
+        s_first || ' ' || s_last AS "name"
+    FROM
+        student
+    JOIN
+        enrollment USING(s_id)
+    WHERE
+        enrollment.grade = 'C' OR enrollment.grade = NULL 
+
+4.
+    SELECT
+        loc_id,
+        bldg_code,
+        capacity
+    FROM
+        location
+    INNER JOIN
+        (            
+            SELECT
+                MAX(capacity) cap
+            FROM
+                location
+        ) ON cap = location.capacity;
+
+5.
+    DROP TABLE t;
+    CREATE TABLE t (id NUMBER PRIMARY KEY);
+    INSERT INTO t VALUES(1);
+    INSERT INTO t VALUES(2);
+    INSERT INTO t VALUES(4);
+    INSERT INTO t VALUES(6);
+    INSERT INTO t VALUES(8);
+    INSERT INTO t VALUES(9);
+
+    SELECT
+        MIN(id) + 1 AS "Min/Max"
+    FROM
+        t
+    WHERE
+        id + 1 NOT IN (
+            SELECT
+                id
+            FROM
+                t
+        )
+    UNION
+    SELECT
+        MAX(id) - 1 AS "Min/Max"
+    FROM
+        t
+    WHERE
+        id - 1 NOT IN (
+            SELECT
+                id
+            FROM
+                t
+        )
+            
+            
+6.
+    SELECT
+        f_id AS "Cod profesor",
+        f_first || ' ' || f_last AS "Nume profesor",
+        CASE
+            WHEN faculty.f_id in (SELECT f_id FROM student) THEN 'Da'
+            ELSE 'Nu'
+        END AS "Student", 
+        CASE
+            WHEN faculty.f_id in (SELECT f_id FROM course_section) THEN 'Da'
+            ELSE 'Nu'
+        END AS "Curs"
+    FROM
+        faculty
+
+7.
+    SELECT
+        tbl_1.term_id,
+        tbl_2.term_id
+    FROM
+        term tbl_1,
+        term tbl_2
+    WHERE
+        SUBSTR(tbl_1.term_desc, LENGTH(tbl_1.term_desc)) != SUBSTR(tbl_2.term_desc, LENGTH(tbl_2.term_desc)) AND
+        SUBSTR(tbl_1.term_desc, 1, LENGTH(tbl_1.term_desc) - 1) = SUBSTR(tbl_2.term_desc, 1, LENGTH(tbl_2.term_desc) - 1) AND
+        tbl_1.term_id < tbl_2.term_id
+
+8.
+    SELECT DISTINCT
+        enrl_1.s_id
+    FROM
+        enrollment enrl_1
+    JOIN
+        enrollment enrl_2 ON enrl_1.s_id = enrl_2.s_id
+    JOIN
+        course_section c_sec_1 ON enrl_1.c_sec_id = c_sec_1.c_sec_id
+    JOIN
+        course_section c_sec_2 ON enrl_2.c_sec_id = c_sec_2.c_sec_id
+    WHERE
+        SUBSTR(c_sec_1.course_no, 5, 1) != SUBSTR(c_sec_2.course_no, 5, 1)
+
+9.
+    SELECT DISTINCT
+        c_sec_1.course_no,
+        c_sec_2.course_no
+    FROM
+        course_section c_sec_1,
+        course_section c_sec_2
+    WHERE
+        c_sec_1.term_id = c_sec_2.term_id AND
+        c_sec_1.course_no < c_sec_2.course_no
+
+10.
+    SELECT
+        course.course_no,
+        course.course_name,
+        term.term_desc,
+        course_section.max_enrl
+    FROM
+        course_section
+    JOIN
+        term ON course_section.term_id = term.term_id
+    JOIN
+        course ON course_section.course_no = course.course_no
+    WHERE
+        course_section.max_enrl < 
+        (
+            SELECT
+                MIN(max_enrl)
+            FROM
+                course_section
+            WHERE
+                loc_id = 1
+        )
+
+11.
+    SELECT DISTINCT
+        course.course_name,
+        course_section.max_enrl
+    FROM
+        course_section
+    JOIN
+        course ON course_section.course_no = course.course_no
+    WHERE
+        course_section.max_enrl = 
+        (
+            SELECT
+                MIN(max_enrl)
+            FROM
+                course_section
+        )
+
+12.
+    SELECT
+        faculty.f_last,
+        AVG(course_section.max_enrl)
+    FROM
+        course_section
+    JOIN
+        faculty USING(f_id)
+    GROUP BY
+        faculty.f_last
+
+13.
+    SELECT
+        faculty.f_last,
+        COUNT(student.s_id)
+    FROM
+        faculty
+    JOIN
+        student USING(f_id)
+    GROUP BY
+        f_last
+    HAVING
+        COUNT(student.s_id) >= 3
+
+14.
+    SELECT DISTINCT
+        nest_tbl.course_name,
+        nest_tbl.max_cap,
+        loc_id
+    FROM
+        course
+    INNER JOIN (
+        SELECT
+            course_name,
+            MAX(location.capacity) max_cap
+        FROM
+            course
+        JOIN
+            course_section USING(course_no)
+        JOIN
+            location USING(loc_id)
+        GROUP BY
+            course_name
+    ) nest_tbl ON nest_tbl.course_name = course.course_name
+    JOIN
+        course_section USING(course_no)
+    JOIN
+        location USING(loc_id)
+    WHERE
+        max_cap = location.capacity
+
+15.
+    SELECT
+        term_desc,
+        AVG(max_enrl)
+    FROM
+        course_section
+    JOIN
+        term USING(term_id)
+    GROUP BY
+        term_desc
+    HAVING
+        SUBSTR(term_desc, -4) = '2007'
