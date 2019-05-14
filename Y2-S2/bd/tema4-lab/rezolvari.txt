@@ -1,0 +1,160 @@
+1.
+SELECT DISTINCT
+    s_last
+FROM
+    student
+JOIN
+    enrollment USING(s_id)
+WHERE
+    s_id != ALL(SELECT s_id FROM enrollment WHERE grade is null);
+
+2.
+SELECT
+    bldg_code
+FROM
+    location
+JOIN
+    course_section USING(loc_id)
+WHERE
+    bldg_code NOT IN (
+        SELECT
+            bldg_code
+        FROM
+            location
+        WHERE
+            loc_id NOT IN (
+                SELECT
+                    loc_id
+                FROM
+                    course_section
+            )
+    )
+
+3.
+SELECT
+    f_last
+FROM
+    faculty
+WHERE
+    f_id in (
+        SELECT
+            f_id
+        FROM
+            student
+        JOIN
+            enrollment USING(s_id)
+        WHERE
+            grade = 'A'
+    ) AND
+    f_id in (
+        SELECT
+            f_id
+        FROM
+            course_section
+        JOIN
+            course USING(course_no)
+        WHERE
+            course_name = 'Database Management'
+    )
+
+4.
+SELECT
+    f_last
+FROM
+    faculty
+JOIN
+    course_section USING(f_id)
+JOIN
+    location ON course_section.loc_id = location.loc_id
+WHERE
+    capacity = (
+        SELECT
+            MAX(capacity)
+        FROM
+            location
+    )
+UNION
+SELECT
+    f_last
+FROM
+    faculty
+JOIN
+    course_section USING(f_id)
+JOIN
+    enrollment USING(c_sec_id)
+GROUP BY
+    f_last, c_sec_id
+HAVING
+    COUNT(s_id) = (
+        SELECT
+            MAX(COUNT(s_id))
+        FROM
+            enrollment
+        GROUP BY
+            c_sec_id
+    )
+
+5.
+SELECT
+    f_last
+FROM
+    faculty
+JOIN
+    location USING(loc_id)
+JOIN
+    course_section USING(f_id)
+WHERE
+    capacity in (
+        SELECT
+            MIN(capacity)
+        FROM
+            location
+    ) AND
+    max_enrl in (
+        SELECT
+            MIN(max_enrl)
+        FROM
+            course_section
+        JOIN
+            location USING(loc_id)
+        WHERE
+            capacity in (
+                SELECT
+                    MAX(capacity)
+                FROM
+                    location
+            )   
+    )
+
+6.
+SELECT
+    AVG("val")
+FROM (
+    SELECT
+        capacity AS "val"
+    FROM
+        location
+    JOIN (
+        SELECT DISTINCT
+            loc_id, f_id
+        FROM
+            course_section
+    ) tbl ON tbl.loc_id = location.loc_id
+    JOIN
+        faculty USING(f_id)
+    WHERE
+        f_last = 'Marx' AND f_first = 'Teresa'
+    UNION ALL
+    SELECT
+        max_enrl AS "val"
+    FROM
+        course_section
+    JOIN
+        enrollment USING(c_sec_id)
+    JOIN
+        student USING(s_id)
+    WHERE
+        s_last = 'Jones' AND s_first = 'Tammy'
+)
+
+7.
