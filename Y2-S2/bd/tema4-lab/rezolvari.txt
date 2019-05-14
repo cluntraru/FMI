@@ -158,3 +158,153 @@ FROM (
 )
 
 7.
+SELECT
+    bldg_code,
+    AVG(capacity)
+FROM
+    location
+JOIN
+    course_section USING(loc_id)
+JOIN
+    course USING(course_no)
+WHERE
+    LOWER(course_name) LIKE '%systems%'
+GROUP BY
+    bldg_code
+
+8.
+Enuntul problemei 21?
+
+9.
+SELECT
+    course_no,
+    course_name
+FROM
+    course
+WHERE
+    course_name LIKE (
+        CASE
+        WHEN (
+            EXISTS (
+                SELECT
+                    course_name
+                FROM
+                    course
+                WHERE
+                    course_name LIKE '%Java%'
+            )
+        ) THEN '%Java%'
+        ELSE '%'
+        END
+    )
+
+
+10.
+SELECT DISTINCT
+    course_no,
+    course.course_name
+FROM
+    course_section
+JOIN
+    location USING(loc_id)
+JOIN
+    faculty USING(f_id)
+JOIN
+    enrollment USING(c_sec_id)
+JOIN
+    student USING(s_id)
+JOIN
+    course USING(course_no)
+JOIN
+    term USING(term_id)
+WHERE (
+    (CASE WHEN capacity = 42 THEN 1 ELSE 0 END) +
+    (CASE WHEN f_last = 'Brown' THEN 1 ELSE 0 END) +
+    (CASE WHEN s_last = 'Jones' AND s_first = 'Tammy' THEN 1 ELSE 0 END) +
+    (CASE WHEN course_name LIKE '%Database%' THEN 1 ELSE 0 END) + 
+    (CASE WHEN term_desc LIKE '% 2007' THEN 1 ELSE 0 END)
+) >= 3
+
+11.
+SELECT
+    term_desc,
+    "course_cnt"
+FROM (
+    SELECT
+        term_desc,
+        COUNT(course_no) AS "course_cnt"
+    FROM
+        term
+    JOIN
+        course_section USING(term_id)
+    JOIN
+        course USING(course_no)
+    WHERE
+        course_name LIKE '%Database%'
+    GROUP BY
+        term_desc
+)
+WHERE
+    "course_cnt" IN (
+        SELECT
+            MAX("course_cnt")
+        FROM (
+            SELECT
+                term_desc,
+                COUNT(course_no) AS "course_cnt"
+            FROM
+                term
+            JOIN
+                course_section USING(term_id)
+            JOIN
+                course USING(course_no)
+            WHERE
+                course_name LIKE '%Database%'
+            GROUP BY
+                term_desc
+        )
+    )
+            
+12.
+SELECT
+    grade,
+    "id_cnt"
+FROM (
+    SELECT
+        grade,
+        COUNT(s_id) AS "id_cnt"
+    FROM (
+        SELECT DISTINCT
+            s_id,
+            grade
+        FROM
+            enrollment
+        WHERE
+            grade is not null
+    )
+    GROUP BY
+        grade
+)
+WHERE
+    "id_cnt" IN (
+        SELECT
+            MAX("cnt") AS "id_cnt"
+        FROM (
+            SELECT
+                grade,
+                COUNT(s_id) AS "cnt"
+            FROM (
+                SELECT DISTINCT
+                    s_id,
+                    grade
+                FROM
+                    enrollment
+                WHERE
+                    grade is not null
+            )
+            GROUP BY
+                grade
+        )
+    )
+
+13.
