@@ -308,3 +308,111 @@ WHERE
     )
 
 13.
+SELECT
+    term_desc
+FROM (
+    SELECT
+        term_desc,
+        COUNT(course_no) AS "three_cred_courses"
+    FROM (
+        SELECT DISTINCT
+            course_no,
+            term_id
+        FROM
+            course_section
+    )
+    JOIN
+        term USING(term_id)
+    JOIN
+        course USING(course_no)
+    WHERE
+        credits = 3
+    GROUP BY
+        term_desc
+)
+WHERE
+    "three_cred_courses" IN (
+        SELECT
+            MAX("three_cred_crs") AS "three_cred_courses"
+        FROM (
+            SELECT
+                term_desc,
+                COUNT(course_no) AS "three_cred_crs"
+            FROM (
+                SELECT DISTINCT
+                    course_no,
+                    term_id
+                FROM
+                    course_section
+            )
+            JOIN
+                term USING(term_id)
+            JOIN
+                course USING(course_no)
+            WHERE
+                credits = 3
+            GROUP BY
+                term_desc
+        )
+    )
+
+14.
+SELECT DISTINCT
+    loc_id
+FROM
+    location
+JOIN
+    course_section USING(loc_id)
+JOIN
+    course USING(course_no)
+WHERE
+    loc_id IN (
+        SELECT
+            loc_id
+        FROM
+            location
+        JOIN
+            course_section USING(loc_id)
+        JOIN
+            course USING(course_no)  
+        WHERE
+            course_name = 'Programming in C++'
+    ) AND
+    loc_id IN (
+        SELECT
+            loc_id
+        FROM
+            location
+        JOIN
+            course_section USING(loc_id)
+        JOIN
+            course USING(course_no)  
+        WHERE
+            course_name = 'Database Management'
+    )
+
+15.
+SELECT
+    COUNT(loc_id),
+    bldg_code
+FROM (
+    SELECT DISTINCT
+        loc_id
+    FROM
+        location
+    JOIN
+        course_section USING(loc_id)
+    UNION
+    SELECT DISTINCT
+        loc_id
+    FROM
+        location
+    JOIN
+        faculty USING(loc_id)
+)
+JOIN
+    location USING(loc_id)
+GROUP BY
+    bldg_code
+HAVING
+    COUNT(loc_id) = 1
