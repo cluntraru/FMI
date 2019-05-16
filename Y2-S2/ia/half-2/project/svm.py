@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import statistics as stats
 import sklearn.metrics as sm
 from sklearn import svm
 from sklearn import preprocessing
@@ -7,9 +8,8 @@ from os import listdir
 from random import randint
 
 
-def svm_classifier(train_data, train_labels, test_data, c):
-    svm_model = svm.SVC(C = c, kernel = "linear")
-#    svm_model = svm.SVC(C = c, kernel = "linear", gamma = "scale")
+def svm_classifier(train_data, train_labels, test_data, c, gm):
+    svm_model = svm.SVC(C = c, kernel = "rbf", gamma = gm)
     svm_model.fit(train_data, train_labels)
     pred_train_labels = svm_model.predict(train_data)
     pred_test_labels = svm_model.predict(test_data)
@@ -62,22 +62,24 @@ def reading_abs_movement(reading):
 
 
 def get_segment_values(segment):
-    x_col = segment[:,0]
-    y_col = segment[:,1]
-    z_col = segment[:,2]
+    x_col = segment[:,0].tolist()
+    y_col = segment[:,1].tolist()
+    z_col = segment[:,2].tolist()
     x_col = np.sort(x_col)
     y_col = np.sort(y_col)
     z_col = np.sort(z_col)
-    x_vals = [x_col[0], x_col[-1], x_col[len(x_col) // 2]]
-    y_vals = [y_col[0], y_col[-1], y_col[len(y_col) // 2]]
-    z_vals = [z_col[0], z_col[-1], z_col[len(z_col) // 2]]
+
+    x_vals = [x_col[0], x_col[-1], x_col[len(x_col) // 2], stats.stdev(x_col), stats.variance(x_col)]
+    y_vals = [y_col[0], y_col[-1], y_col[len(y_col) // 2], stats.stdev(y_col), stats.variance(y_col)]
+    z_vals = [z_col[0], z_col[-1], z_col[len(z_col) // 2], stats.stdev(z_col), stats.variance(z_col)]
     return x_vals + y_vals + z_vals
 
 
 def process_reading(reading):
     ''' Turn accelerometer reading into a 3-tuple '''
+#    reading = np.sort(reading)
     processed_reading = np.array([])
-    segment_num = 13
+    segment_num = 12 
 #    segment_len = len(reading) // segment_num
     segment_len = 150 // segment_num
     for segment_idx in range(segment_num - 1):
@@ -94,29 +96,6 @@ def process_reading(reading):
     return processed_reading
     
 
-#    app = {}
-#    nums = []
-    # 45 equally distanced numbers
-#    for i in range(45):
-#        nums.append(i * 3)
-
-#    processed_reading = np.array([])
-#    for i in range(100):
-#        rd = randint(0, len(reading) - 1)
-#        while rd in app and app[rd] == True:
-#            rd = randint(0, len(reading) - 1)
-
-#        app[rd] = True
-#        nums.append(rd)
-
-#    for row in nums:
-#        processed_reading = np.append(processed_reading, reading[row][:], axis = 0)
-
-#    processed_reading = processed_reading.flatten()
-#    reading = reading[:100,:].flatten()
-#    return processed_reading
-
-
 def data_from_dir(data_path, dir_name):
     data = np.array([]) 
     files = listdir(data_path + dir_name)
@@ -130,7 +109,8 @@ def data_from_dir(data_path, dir_name):
         data = np.append(data, reading, axis = 0)
         ids = np.append(ids, curr_id)
 
-    data = np.reshape(data, (len(files), 117))
+    # Number of numbers per x,y,z * 3 * number of blocks
+    data = np.reshape(data, (len(files), 180))
 #    data = np.reshape(data, (len(files), 135))
     return data, ids
 
@@ -138,14 +118,14 @@ def data_from_dir(data_path, dir_name):
 # Main
 data_path = ""
 # data_path = "/content/gdrive/My Drive/Colab Notebooks/project_data/project/"
-train_labels = np.genfromtxt(data_path + "train_labels.csv", delimiter = ",", skip_header = 1)
+train_labels = np.genfromtxt(data_path + "train_labels0.csv", delimiter = ",", skip_header = 1)
 train_labels = train_labels[:,1]
 # print(train_labels)
 
-train_data, train_ids = data_from_dir(data_path, "train/")
-test_data, test_ids = data_from_dir(data_path, "test/")
+train_data, train_ids = data_from_dir(data_path, "train0/")
+test_data, test_ids = data_from_dir(data_path, "test0/")
 scaled_train_data, scaled_test_data = normalize_data(train_data, test_data, "standard")
-pred_train_labels, pred_test_labels = svm_classifier(scaled_train_data, train_labels, scaled_test_data, 1) 
+pred_train_labels, pred_test_labels = svm_classifier(scaled_train_data, train_labels, scaled_test_data, 1, "scale") 
 
 out_file_name = data_path + "output.csv"
 out_file = open(out_file_name, "w") 
@@ -155,7 +135,7 @@ test_labels = test_labels[:,1]
 
 print(pred_train_labels, train_labels)
 print("Training accuracy: ", sm.accuracy_score(pred_train_labels, train_labels))
-#print("Test accuracy: ", sm.accuracy_score(pred_test_labels, test_labels))
+print("Test accuracy: ", sm.accuracy_score(pred_test_labels, test_labels))
 
 out_file.write("id,class\n")
 for i in range(len(pred_test_labels)):
