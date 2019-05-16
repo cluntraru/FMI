@@ -118,12 +118,12 @@ def data_from_dir(data_path, dir_name):
 # Main
 data_path = ""
 # data_path = "/content/gdrive/My Drive/Colab Notebooks/project_data/project/"
-train_labels = np.genfromtxt(data_path + "train_labels0.csv", delimiter = ",", skip_header = 1)
+train_labels = np.genfromtxt(data_path + "train_labels.csv", delimiter = ",", skip_header = 1)
 train_labels = train_labels[:,1]
 # print(train_labels)
 
-train_data, train_ids = data_from_dir(data_path, "train0/")
-test_data, test_ids = data_from_dir(data_path, "test0/")
+train_data, train_ids = data_from_dir(data_path, "train/")
+test_data, test_ids = data_from_dir(data_path, "test/")
 scaled_train_data, scaled_test_data = normalize_data(train_data, test_data, "standard")
 pred_train_labels, pred_test_labels = svm_classifier(scaled_train_data, train_labels, scaled_test_data, 1, "scale") 
 
@@ -135,7 +135,7 @@ test_labels = test_labels[:,1]
 
 print(pred_train_labels, train_labels)
 print("Training accuracy: ", sm.accuracy_score(pred_train_labels, train_labels))
-print("Test accuracy: ", sm.accuracy_score(pred_test_labels, test_labels))
+#print("Test accuracy: ", sm.accuracy_score(pred_test_labels, test_labels))
 
 out_file.write("id,class\n")
 for i in range(len(pred_test_labels)):
