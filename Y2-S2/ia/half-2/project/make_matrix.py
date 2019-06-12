@@ -16,11 +16,14 @@ for i in range(3000):
     matrix1[int(labels1[i])][int(output1[i])] += 1
     matrix2[int(labels2[i])][int(output2[i])] += 1
 
+
 f0 = open("matrix0.txt", "w")
 f1 = open("matrix1.txt", "w")
 f2 = open("matrix2.txt", "w")
+count = 0
 for i in range(1, 21):
     for j in range(1, 21):
+        count += int(matrix0[i][j])
         f0.write(str(int(matrix0[i][j])) + " ")
         f1.write(str(int(matrix1[i][j])) + " ")
         f2.write(str(int(matrix2[i][j])) + " ")
@@ -28,4 +31,3 @@ for i in range(1, 21):
     f0.write("\n")
     f1.write("\n")
     f2.write("\n")
-
