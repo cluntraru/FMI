@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1",
+  "command": "/usr/bin/c++   -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/include -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glfw/include  -std=c++14 -g   -o CMakeFiles/tema1.dir/src/main.cpp.o -c /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/src/main.cpp",
+  "file": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/src/main.cpp"
+},
+{
+  "directory": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1",
+  "command": "/usr/bin/cc  -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/include -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glfw/include  -g   -o CMakeFiles/tema1.dir/lib/glad/src/glad.c.o   -c /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/src/glad.c",
+  "file": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/src/glad.c"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++14 -g   CMakeFiles/tema1.dir/src/main.cpp.o CMakeFiles/tema1.dir/lib/glad/src/glad.c.o  -o tema1 lib/glfw/src/libglfw3d.a /usr/lib/x86_64-linux-gnu/librt.so -lm -ldl /usr/lib/x86_64-linux-gnu/libX11.so -lpthread 
