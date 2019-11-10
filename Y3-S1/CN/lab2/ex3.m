@@ -1,18 +1,27 @@
-syms x
-f = @(x) (x - 1.5).^2.*(x - 4);
-df = diff(f, x, 1);
-mu = f / df;
-simplify(mu);
-dmu = diff(mu, x, 1);
-[xaprox] = MetNR(mu, dmu, 1.4, 10^(-5));
-X = linspace(1, 2, 100);
-y = f(X);
-plot(X, Y)
+f = @(x) x .^ 3 - 18 * x - 10;
+Xs = linspace(-5, 5);
+eps = 10^(-5);
 
-mu = @(x) (2 * x.^2 - 11 * x + 12) ./ (6 * x - 19);
-Z = mu(X);
-
+% 3. a)
 hold on
-plot(X, Z)
-plot(xaprox, mu(xaprox), 'o', 'MarkerSize', 10)
+
+plot(Xs, f(Xs));
+
+line([0 0], ylim);
+line(xlim, [0 0]);
+
+% 3. d) [-5, -3], [-1, 0], [4, 5]
+[xSec1] = MetSecantei(f, -5, -3, -4, -2, eps);
+[xSec2] = MetSecantei(f, -1, 0, -0.75, -0.25, eps);
+[xSec3] = MetSecantei(f, 4, 5, 4.4, 4.6, eps);
+
+% 3. e)
+[xPozF1] = MetPozFalse(f, -5, -3, eps);
+[xPozF2] = MetPozFalse(f, -1, 0, eps);
+[xPozF3] = MetPozFalse(f, 4, 5, eps);
+
+plot(xPozF1, f(xPozF1), 'o');
+plot(xPozF2, f(xPozF2), 'o');
+plot(xPozF3, f(xPozF3), 'o');
+
 hold off

@@ -1,29 +1,28 @@
-function [xaprox] = MetPozFalse(f, A, B, eps)
-    syms x
-    a(1) = 1;
-    b(1) = B;
+function [xAprox] = MetPozFalse(f, a, b, eps)
+    A(1) = a;
+    B(1) = b;
+    X(1) = (A(1) * f(B(1)) - B(1) * f(A(1))) / (f(B(1)) - f(A(1)));
+    
     k = 1;
-    y(1) = (a(1) * subs(f, x, b(1)) - b(1) * subs(f, x, a(1)) / (subs(f, x, b(1)) - subs(f, x, a(1)));
-            
-    cond = 1;
-    while cond == 1
+    while 1
         k = k + 1;
-        if subs(f, x, y(k - 1)) == 0
-            y(k) = y(k - 1);
-            break
-        elseif subs(f, x, a(k - 1)) * subs(f, x, y(k - 1)) < 0
-            a(k) = a(k - 1);
-            b(k) = y(k - 1);
-            y(k) = (a(k) * subs(f, x, b(k)) - b(k) * subs(f, x, a(k))) / (subs(f, x, b(k)) - subs(f, x, a(k)));
-        elseif subs(f, x, a(k - 1)) * subs(f, x, y(k - 1)) > 0
-            a(k) = y(k - 1);
-            b(k) = b(k - 1);
-            y(k) = (a(k) * subs(f, x, b(k)) - b(k) * subs(f, x, a(k))) / (subs(f, x, b(k))) - subs(f, x, a(k));
+        if f(X(k - 1)) == 0
+            X(k) = X(k - 1);
+            break;
+        elseif f(A(k -1)) * f(X(k - 1)) < 0
+            A(k) = A(k - 1);
+            B(k) = X(k - 1);
+            X(k) = (A(k) * f(B(k)) - B(k) * f(A(k))) / (f(B(k)) - f(A(k)));
+        elseif f(A(k - 1)) * f(X(k - 1)) > 0
+            A(k) = X(k - 1);
+            B(k) = B(k - 1);
+            X(k) = (A(k) * f(B(k)) - B(k) * f(A(k))) / (f(B(k)) - f(A(k)));
         end
         
-        if abs(y(k) - y(k - 1)) / abs(y(k - 1)) < eps
-            cond = 0;
+        if abs(X(k) - X(k - 1)) / abs(X(k - 1)) < eps
+            break
         end
     end
-    xaprox = y(k);
+    
+    xAprox = X(k);
 end
