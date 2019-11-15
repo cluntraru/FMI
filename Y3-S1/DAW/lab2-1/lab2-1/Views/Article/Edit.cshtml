@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>Formular editare in care preluam datele actuale ale articolului</p>
+
+<form method="post" action="Articol/Edit/@ViewBag.Id">
+    @Html.HttpMethodOverride(HttpVerbs.Put);
+    <button type="submit">Modifica articol</button>
+</form>"
+

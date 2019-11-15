@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var article in ViewBag.Articles) {
+    <h1>@article.Title</h1>
+    <p>@article.Content</p>
+    <small>@article.Date.ToString()</small>
+    <a href="/Article/Show/@article.Id">Afisare articol</a>
+    <a href="/Article/Edit/@article.Id">Editare articol</a>
+    <br />
+    <hr />
+    <br />
+}
+
+<h1>Index</h1>
+
