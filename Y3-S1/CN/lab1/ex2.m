@@ -1,14 +1,11 @@
-figure
-y = linspace(0, 2, 100);
-plot(y, exp(y) - 2)
-figure
-plot(y, cos(exp(y) - 2))
-f = @(x) exp(x) - 2- cos(exp(x) - 2)
-
-X = linspace(0.5, 1.5, 100)
-Y = f(X);
+figure;
+x = linspace(0.5, 1.5);
+plot(x, exp(x) - 2);
 
 figure
-plot(X, Y)
+plot(x, cos(exp(x) - 2));
+
+f = @(x) exp(x) - 2 - cos(exp(x) - 2);
 eps = 10^(-5);
-[xaprox] = MetBisectie(f, 0.5, 1.5, eps)
+xaprox = MetBisectie(f, 0.5, 1.5, eps);
+xaprox
