@@ -1,0 +1,41 @@
+--1
+--DECLARE
+--    v_nr NUMBER(4);
+--    v_nume departments.department_name%TYPE;
+--    CURSOR c IS
+--        SELECT department_name nume,
+--               COUNT(employee_id) nr
+--        FROM departments d, employees e
+--        WHERE d.department_id = e.department_id(+)
+--        GROUP BY department_name;
+--BEGIN
+--    OPEN c;
+--    LOOP
+--        FETCH c INTO v_nume, v_nr;
+--        EXIT WHEN c%NOTFOUND;
+--        DBMS_OUTPUT.PUT_LINE('In dept. ' || v_nume || ' lucreaza ' || v_nr || ' angajati');
+--    END LOOP;
+--    CLOSE c;
+--END;
+
+----2
+--DECLARE
+--    TYPE tab_nume IS TABLE OF departments.department_name%TYPE;
+--    TYPE tab_nr IS TABLE OF NUMBER(4);
+--    t_nr tab_nr;
+--    t_nume tab_nume;
+--    CURSOR c IS
+--        SELECT department_name nume, COUNT(DISTINCT employee_id) nr
+--        FROM departments d
+--        JOIN employees e ON d.department_id = e.department_id
+--        GROUP BY department_name;
+--BEGIN
+--    OPEN c;
+--    FETCH c BULK COLLECT INTO t_nume, t_nr;
+--    CLOSE c;
+--    FOR i IN t_nume.FIRST..t_nume.LAST LOOP
+--        DBMS_OUTPUT.PUT_LINE('In dept. ' || t_nume(i) || ' lucreaza ' || t_nr(i) || ' angajati');
+--    END LOOP;
+--END;
+
+
