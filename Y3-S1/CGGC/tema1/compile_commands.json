@@ -1,12 +1,17 @@
 [
 {
   "directory": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1",
-  "command": "/usr/bin/c++   -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/include -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glfw/include  -std=c++14 -g   -o CMakeFiles/tema1.dir/src/main.cpp.o -c /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/src/main.cpp",
+  "command": "/usr/bin/c++   -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/include -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glm-0.9.9.6 -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glfw/include  -std=c++14 -g   -o CMakeFiles/tema.dir/src/main.cpp.o -c /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/src/main.cpp",
   "file": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/src/main.cpp"
 },
 {
   "directory": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1",
-  "command": "/usr/bin/cc  -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/include -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glfw/include  -g   -o CMakeFiles/tema1.dir/lib/glad/src/glad.c.o   -c /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/src/glad.c",
+  "command": "/usr/bin/c++   -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/include -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glm-0.9.9.6 -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glfw/include  -std=c++14 -g   -o CMakeFiles/tema.dir/src/tema2/tema2.cpp.o -c /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/src/tema2/tema2.cpp",
+  "file": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/src/tema2/tema2.cpp"
+},
+{
+  "directory": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1",
+  "command": "/usr/bin/cc  -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/include -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glm-0.9.9.6 -I/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glfw/include  -g   -o CMakeFiles/tema.dir/lib/glad/src/glad.c.o   -c /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/src/glad.c",
   "file": "/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/lib/glad/src/glad.c"
 }
 ]

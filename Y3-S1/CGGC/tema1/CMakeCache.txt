@@ -278,7 +278,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=tema1
+CMAKE_PROJECT_NAME:STATIC=tema
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=3.4.0
@@ -647,6 +647,12 @@ tema1_BINARY_DIR:STATIC=/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1
 
 //Value Computed by CMake
 tema1_SOURCE_DIR:STATIC=/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1
+
+//Value Computed by CMake
+tema_BINARY_DIR:STATIC=/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1
+
+//Value Computed by CMake
+tema_SOURCE_DIR:STATIC=/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1
 
 
 ########################

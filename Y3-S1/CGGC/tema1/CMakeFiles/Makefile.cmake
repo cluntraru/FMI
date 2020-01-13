@@ -64,7 +64,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/tema1.dir/DependInfo.cmake"
+  "CMakeFiles/tema.dir/DependInfo.cmake"
   "lib/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake"
   "lib/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   )

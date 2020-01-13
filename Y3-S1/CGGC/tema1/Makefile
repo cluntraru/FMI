@@ -157,17 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tema1
+# Target rules for targets named tema
 
 # Build rule for target.
-tema1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tema1
-.PHONY : tema1
+tema: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tema
+.PHONY : tema
 
 # fast build rule for target.
-tema1/fast:
-	$(MAKE) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/build
-.PHONY : tema1/fast
+tema/fast:
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/build
+.PHONY : tema/fast
 
 #=============================================================================
 # Target rules for targets named uninstall
@@ -201,7 +201,7 @@ lib/glad/src/glad.o: lib/glad/src/glad.c.o
 
 # target to build an object file
 lib/glad/src/glad.c.o:
-	$(MAKE) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/lib/glad/src/glad.c.o
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/lib/glad/src/glad.c.o
 .PHONY : lib/glad/src/glad.c.o
 
 lib/glad/src/glad.i: lib/glad/src/glad.c.i
@@ -210,7 +210,7 @@ lib/glad/src/glad.i: lib/glad/src/glad.c.i
 
 # target to preprocess a source file
 lib/glad/src/glad.c.i:
-	$(MAKE) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/lib/glad/src/glad.c.i
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/lib/glad/src/glad.c.i
 .PHONY : lib/glad/src/glad.c.i
 
 lib/glad/src/glad.s: lib/glad/src/glad.c.s
@@ -219,7 +219,7 @@ lib/glad/src/glad.s: lib/glad/src/glad.c.s
 
 # target to generate assembly for a file
 lib/glad/src/glad.c.s:
-	$(MAKE) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/lib/glad/src/glad.c.s
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/lib/glad/src/glad.c.s
 .PHONY : lib/glad/src/glad.c.s
 
 src/main.o: src/main.cpp.o
@@ -228,7 +228,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -237,7 +237,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -246,8 +246,35 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/tema2/tema2.o: src/tema2/tema2.cpp.o
+
+.PHONY : src/tema2/tema2.o
+
+# target to build an object file
+src/tema2/tema2.cpp.o:
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/src/tema2/tema2.cpp.o
+.PHONY : src/tema2/tema2.cpp.o
+
+src/tema2/tema2.i: src/tema2/tema2.cpp.i
+
+.PHONY : src/tema2/tema2.i
+
+# target to preprocess a source file
+src/tema2/tema2.cpp.i:
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/src/tema2/tema2.cpp.i
+.PHONY : src/tema2/tema2.cpp.i
+
+src/tema2/tema2.s: src/tema2/tema2.cpp.s
+
+.PHONY : src/tema2/tema2.s
+
+# target to generate assembly for a file
+src/tema2/tema2.cpp.s:
+	$(MAKE) -f CMakeFiles/tema.dir/build.make CMakeFiles/tema.dir/src/tema2/tema2.cpp.s
+.PHONY : src/tema2/tema2.cpp.s
 
 # Help Target
 help:
@@ -257,7 +284,7 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... edit_cache"
-	@echo "... tema1"
+	@echo "... tema"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install/local"
@@ -270,6 +297,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/tema2/tema2.o"
+	@echo "... src/tema2/tema2.i"
+	@echo "... src/tema2/tema2.s"
 .PHONY : help
 
 

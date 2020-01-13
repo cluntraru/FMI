@@ -1,6 +1,6 @@
 /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/CMakeFiles/install/strip.dir
 /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/CMakeFiles/edit_cache.dir
-/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/CMakeFiles/tema1.dir
+/home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/CMakeFiles/tema.dir
 /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/CMakeFiles/rebuild_cache.dir
 /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/CMakeFiles/list_install_components.dir
 /home/cluntraru/Documents/git-repos/FMI/Y3-S1/CGGC/tema1/CMakeFiles/install/local.dir
