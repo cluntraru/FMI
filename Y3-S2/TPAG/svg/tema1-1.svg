@@ -1,0 +1,34 @@
+<svg version="1.1"
+     baseProfile="full"
+     width="1000" height="1000">
+
+  <rect x="250" y="400" width="50%" height="50%" fill="grey" /> <!-- body casa -->
+  <polygon points="500, 100 850, 400 150, 400" fill="red" /> <!-- acoperis -->
+  <rect x="300" y="600" width="150" height="300" fill="brown" /> <!-- usa -->
+  <rect x="330" y="630" width="90" height="90" fill="blue" /> <!-- geam usa -->
+
+  <!-- linii geam usa -->
+  <line x1="375" y1="630" x2="375" y2="720" stroke="black" stroke-width="5"/>
+  <line x1="330" y1="675" x2="420" y2="675" stroke="black" stroke-width="5"/>
+
+  <!-- geam elipsa -->
+  <ellipse cx="600" cy="500" rx="125" ry="75" fill="lightblue"/>
+
+  <!-- maner usa -->
+  <circle cx="430" cy="750" r="10" fill="yellow"/>
+
+  <!-- stalp cutie postala -->
+  <rect x="100" y="700" width="30" height="200" fill="brown"/>
+
+  <!-- cutie postala -->
+  <path d="
+    M 75, 700
+    C 75, 600
+      155, 600
+      155, 700"
+    fill="green"/>
+
+  <text x="90" y="675" font-size="15" text-anchor="left" fill="white">Tema 1</text>
+
+</svg>
+
