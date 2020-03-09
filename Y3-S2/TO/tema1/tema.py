@@ -43,7 +43,7 @@ def Segment():
     # Solutia
     solX = np.arange(1, 3, 0.01)
     solY = np.arange(2, 0, -0.01)
-    plt.plot(solX, solY, 'r--')
+    plt.plot(solX, solY, 'y--')
     
     plt.grid(True)
 
@@ -74,10 +74,13 @@ def Punct():
     plt.plot([0 for i in range(len(OY))], OY, 'g')
     
     # Solutia
-    solX = 1
-    solY = 2
-    plt.plot(X, [2 for i in range(len(X))], 'r--')
-    plt.plot(solX, solY, 'ro', alpha=1.0)
+    solX = np.arange(-2, 5, 0.01)
+    solY = np.arange(5, -2, -0.01)
+    plt.plot(solX, solY, 'y--')
+    #solX = 1
+    #solY = 2
+    #plt.plot(X, [2 for i in range(len(X))], 'y--')
+    #plt.plot(solX, solY, 'ro', alpha=1.0)
 
     # Zona cu valori posibile
     plt.plot(1, 2, 'bs', alpha = 0.4)
@@ -86,7 +89,7 @@ def Punct():
 
 
 def Vid():
-    # f(x1, x2) = 3 - x2
+    # f(x1, x2) = x1 + x2
     # x1 + x2 <= 3
     # x2 - x1 <= 1
     # x1 >= 0
@@ -112,7 +115,10 @@ def Vid():
     plt.plot([0 for i in range(len(OY))], OY, 'g')
     
     # Solutia
-    plt.plot(X, [3 for i in range(len(X))], 'r--')
+    solX = np.arange(-2, 5, 0.01)
+    solY = np.arange(5, -2, -0.01)
+    plt.plot(solX, solY, 'y--')
+    #plt.plot(X, [3 for i in range(len(X))], 'y--')
     
     plt.grid(True)
 
@@ -149,9 +155,9 @@ def Infinit():
     plt.fill_between(fillX, loY, hiY)
     
     # Solutia
-    solX = np.arange(-0.5, 2, 0.01)
-    solY = np.arange(0.5, -2, -0.01)
-    plt.plot(solX, -solX, 'r--')
+    solX = np.arange(1, 5, 0.01)
+    solY = np.arange(2, -2, -0.01)
+    plt.plot(solX, solY, 'y--')
     
     plt.grid(True)
 
