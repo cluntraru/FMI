@@ -1,5 +1,3 @@
-mathshistory.st-andrews.ac.uk/Curves/Cycloid.html
-
 ## Exercitiul 1
 O casuta cu elementele:
     1. casa in sine: dreptunghi gri
@@ -13,4 +11,14 @@ O casuta cu elementele:
     9. text pe cutia postala: tema 1
     10. broasca usa: cerc galben
 
+## Exercitiul 2
+Foliumul lui Descartes
+- descartes.py genereaza SVGul pentru grafic
+- este randat prin multe cercuri mici ce reprezinta puncte
+
+## Exercitiul 3
+Masina din curbe Bezier
+- Racord de clasa C1 in punctul 60, 30 (pe acoperis)
+- Racord de clasa GC1 in punctul 40, 50
+- Partea de jos a masinii si rotile sunt linii, respectiv cercuri pentru a completa desenul
 
