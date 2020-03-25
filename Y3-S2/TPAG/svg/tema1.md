@@ -10,6 +10,8 @@ O casuta cu elementele:
     8. cutie postala in sine: curba bezier (path)
     9. text pe cutia postala: tema 1
     10. broasca usa: cerc galben
+    11. gazon: dreptunghi verde
+    12. rasarit: radial gradient pe toata dimensiunea plansei care incepe de la rosu si evolueaza in galben
 
 ## Exercitiul 2
 Foliumul lui Descartes

@@ -1,6 +1,16 @@
 <svg version="1.1"
      baseProfile="full"
-     width="1000" height="1000">
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1001" height="1000">
+    
+  <radialGradient id="GradientSun">
+    <stop offset="0%" stop-color="red"/>
+    <stop offset="100%" stop-color="yellow"/>
+  </radialGradient>
+
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#GradientSun)"/> <!-- rasarit -->
+  <rect x="0" y="600" width = "100%" height="400" fill="green"/> <!-- gazon, gradina -->
 
   <rect x="250" y="400" width="50%" height="50%" fill="grey" /> <!-- body casa -->
   <polygon points="500, 100 850, 400 150, 400" fill="red" /> <!-- acoperis -->
@@ -26,7 +36,7 @@
     C 75, 600
       155, 600
       155, 700"
-    fill="green"/>
+    fill="lightgreen"/>
 
   <text x="90" y="675" font-size="15" text-anchor="left" fill="white">Tema 1</text>
 
