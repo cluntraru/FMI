@@ -1,0 +1,77 @@
+Varianta 1
+
+DES
+
+Ex 2.
+ECB: 7F 45 4B 31 7F 8E 3E C5 0A 5E C5 C0 5B 78 67 82
+CBC: 7F 45 4B 31 7F 8E 3E C5 B3 7F 5A 6C C2 64 6A 85
+
+Ex 3.
+decriptat: sistem de criptare simetric
+cheie: CBC
+
+Ex 4.
+input: text de criptat
+cheie initiala:   46 AE EF FF 23 44 67 F1
+cheie modificata: 46 AE EF FF 03 44 67 F1
+
+cyphertext initial:   D6 75 C9 BE EB 4B CA 50 40 2D 13 60 FF 99 BB B2
+cyphertext modificat: 7C 74 3E 68 3A 33 CB 48 0F 88 37 EF C2 A6 49 D5
+cyphertext initial in binar:   11010110 01110101 11001001 10111110 11101011 01001011 11001010 01010000 01000000 00101101 00010011 01100000 11111111 10011001 10111011 10110010
+cyphertext modificat in binar: 01111100 01110100 00111110 01101000 00111010 00110011 11001011 01001000 00001111 10001000 00110111 11101111 11000010 10100110 01001001 11010101
+XOR dintre cyphertexturi: 10101010000000011111011111010110110100010111100000000001000110000100111110100101001001001000111100111101001111111111001001100111
+
+observatie: aproximativ jumate din biti din xorul celor 2 ccyphertexturi sunt 1, iar cealalta jumate evident 0, deci se observa proprietatea de difuzie
+
+Ex 5.
+input: this is some random plaintext
+cheie: 46 AE EF FF 23 44 67 F1
+cyphertext ECB: 23 1F 7B A3 9B 85 D7 8F CC 17 E2 55 05 B9 20 81 4C 39 EA 67 91 FB 4E 65 2C FE 16 62 44 D9 CB CD
+cyphertext CBC: 23 1F 7B A3 9B 85 D7 8F 85 08 70 A4 A6 4F 5C 5D A0 53 F0 70 FA 33 B6 5F 14 53 8F 95 35 E1 B2 28
+
+cyphertext eronat ECB: 23 0F 7B A3 9B 85 D7 8F CC 17 E2 55 05 B9 20 81 4C 39 EA 67 91 FB 4E 65 2C FE 16 62 44 D9 CB CD
+cyphertext eronat CBC: 23 0F 7B A3 9B 85 D7 8F 85 08 70 A4 A6 4F 5C 5D A0 53 F0 70 FA 33 B6 5F 14 53 8F 95 35 E1 B2 28
+
+decriptare cyphertext eronat ECB: yx?,?*U)some random plaintext
+decriptare cyphertext eronat CBC: yx?,?*U)sme random plaintext
+
+observatie: ECB este putin mai rezistent la erori de transmisie, dar au rezultate similare. A pastrat caracterul o, pe cand
+
+Ex 6.
+input: this is a longer text because last time it was a bit too short
+
+01 01 01 01 01 01 01 01
+chypertext: C9 8F 23 DE 0E 20 20 D8 85 4B D2 A9 11 DA 3B 30 73 0D C9 5B 4A 26 25 49 3F 63 E2 A1 D2 CC 7B 09 8E 39 FD 7C B9 DF 90 33 BC 82 07 DA 1B 36 92 6B 96 72 15 0C 28 8C 8F 1C 0F FB 16 91 BB AC 60 00
+Cheie slaba: DA
+
+01 E0 01 E0 01 F1 01 F1
+cyphertext: 94 05 06 F6 A9 D6 8D F1 03 FE 7F AD C5 AA 5C D4 AF 60 63 BE D4 A6 F4 1B FD 84 73 34 CE AF E7 FE E8 39 81 8E A9 12 04 8A 46 28 A3 D8 30 63 48 A0 D0 C3 F8 93 D5 4E 32 5D 6F 68 0E AA 89 45 70 61
+Cheie slaba: NU
+
+10 10 10 10 10 10 10 10
+cyphertext: F2 99 F3 A4 43 12 1A 77 89 0E A0 FB 95 16 25 FC F3 8E 08 37 F2 F8 3E AA 3E EA DF 17 AA 09 60 52 1E 8A 0C 1E 3D 4B 73 41 83 D7 66 AB 2E 74 5F 2A 6E B7 11 D1 9C C3 D6 47 2C 43 60 DE BC C3 F9 05
+Cheie slaba: NU
+
+E0 01 E0 01 F1 01 F1 01
+cyphertext: FB 6F E1 3A 79 44 E8 9E D1 76 6D 3F 8E D2 66 39 B7 38 E6 2F 2C F1 80 E9 43 E8 AB 5A CE FA 79 9C CC 01 42 1B 83 F4 0D 92 36 6A C6 0A 66 4C F7 AD 06 84 C2 2C 15 6A 95 6B CA C3 00 13 1A 5B 23 E1
+Cheie slaba: NU
+
+Pereche de chei semi slabe:
+k1 = E0 01 E0 01 F1 01 F1 01
+k2 = 01 E0 01 E0 01 F1 01 F1
+
+Ex 7.
+Brute force pe X pentru criptare:
+1: 38 CD 3A 61 AC 36 F3 4E
+
+
+Brute force pe X pentru decriptare:
+A: 38 CD 3A 61 AC 36 F3 4E
+
+AES
+
+Ex 2.
+Cyphertext CBC: 5A 08 26 32 39 3B 70 93 DD 44 1F 32 5D 8C 73 5A F4 05 7D FB 41 2C D1 FB C2 95 34 2E A8 54 6C EC
+
+Ex 3.
+Decriptat: Joan Daemen ; Vincent Rijmen
