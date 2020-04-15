@@ -23,8 +23,9 @@ plains.xcf este fisierul GIMP pentru exercitiul 1 si plains-filtered.xcf este ce
 - Dupa ce am asezat taote casutele cu perspectiva, am mai folosit odata perspective tool pentru a finisa detalii
 
 ## Exercitiul 2
-- Am aplicat filtrul de sharpen pe catedrala deoarece avea o rezolutie mai mica decat celelalte elemente, astfel am obtinut un aspect ceva mai uniform
-- Casele si turnul erau inca prea detaliate fata de catedrala, deci am aplicat gaussian blur pe ele si mai ales pe campia din peisaj, astfel poza este uniforma
+- Am aplicat filtrul de sharpen pe catedrala deoarece avea o rezolutie mai mica decat celelalte elemente. Cu filtrul sharpen, am putut reliefa contrastul de pe catedrala. Astfel, pare ca imaginea este mai detaliata si nu iese atat de tare in evidenta din cauza rezolutiei proaste. Acum catedrala chiar pare ca face parte din acelasi peisaj.
+- Desi am modificat catedrala cu filtrul sharpen, inca se observa o distinctie intre ea si celelalte elemente. De asemenea, toate elementele sunt in mod vizibil "distincte". Filtrul gaussian blur cauzeaza o pierdere uniforma de detalii asupra intregii imagini astfel incat toate elementele sa aiba acelasi efect, ca si cum ar fi facut mereu parte din acelas ansamblu.
+- Am creat un filtru cu matricea a11 = 3 si a33 = 1 (restul 0), cu normalise debifat. Astfel, s-a creat un efect prin care casutele par iluminate din stanga sus, directia soarelui din fundal. Am dezactivat alpha channel din matrice, caci se creau margini negre din cauza acestuia. Am adaugat aceste modificarid pentru a apropia nuanta casutelor de cele ale turnului si a catedralei, dand o imagine mai credibila.
 
 
 
