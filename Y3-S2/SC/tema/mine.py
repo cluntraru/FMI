@@ -20,8 +20,14 @@ mant = bits & 0xffffff
 target_hexstr = '%064x' % (mant * (1<<(8*(exp - 3))))
 target_str = target_hexstr.decode('hex')
  
-nonce = 3000000000
-maxNonce = 3100000000
+#Submit case 1
+#nonce = 3000000000
+#maxNonce = 3100000000
+#Submit case 2
+nonce = 3430787322
+maxNonce = 3530787322
+
+# Test
 #nonce = 530000000
 #maxNonce = 540000000
 while nonce < maxNonce:
